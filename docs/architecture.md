@@ -1,5 +1,8 @@
 # System Architecture
 
+## Team: Supriya
+## Date: March 22, 2026
+
 ## Members and Roles:
 - Corpus Architect: Supriya Veerla
 - Pipeline Engineer: Supriya Veerla

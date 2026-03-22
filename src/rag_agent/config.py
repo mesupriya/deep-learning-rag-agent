@@ -175,8 +175,15 @@ class LLMFactory:
         Interview talking point: Groq uses LPU (Language Processing Unit)
         inference for significantly lower latency than GPU-based inference.
         """
-        # TODO: implement using langchain_groq.ChatGroq
-        raise NotImplementedError
+        from langchain_groq import ChatGroq
+        
+        if not self._settings.groq_api_key:
+            raise EnvironmentError("GROQ_API_KEY is missing from environment.")
+            
+        return ChatGroq(
+            api_key=self._settings.groq_api_key,
+            model=self._settings.groq_model,
+        )
 
     def _create_ollama(self) -> BaseChatModel:
         """
@@ -188,8 +195,12 @@ class LLMFactory:
         Interview talking point: local inference eliminates data privacy
         concerns and removes API cost and latency entirely.
         """
-        # TODO: implement using langchain_ollama.ChatOllama
-        raise NotImplementedError
+        from langchain_ollama import ChatOllama
+        
+        return ChatOllama(
+            base_url=self._settings.ollama_base_url,
+            model=self._settings.ollama_model,
+        )
 
     def _create_lmstudio(self) -> BaseChatModel:
         """
@@ -205,8 +216,13 @@ class LLMFactory:
         OpenAI-native tooling to work with self-hosted models without
         code changes — just a base_url swap.
         """
-        # TODO: implement using langchain_openai.ChatOpenAI with base_url override
-        raise NotImplementedError
+        from langchain_openai import ChatOpenAI
+        
+        return ChatOpenAI(
+            base_url=self._settings.lmstudio_base_url,
+            api_key="lm-studio",
+            model=self._settings.lmstudio_model,
+        )
 
 
 # ---------------------------------------------------------------------------
@@ -265,8 +281,11 @@ class EmbeddingFactory:
         Interview talking point: local embeddings mean the corpus content
         never leaves the machine — important for proprietary datasets.
         """
-        # TODO: implement using langchain_community.embeddings.HuggingFaceEmbeddings
-        raise NotImplementedError
+        from langchain_community.embeddings import HuggingFaceEmbeddings
+        
+        return HuggingFaceEmbeddings(
+            model_name=self._settings.embedding_model,
+        )
 
     def _create_openai(self):
         """
@@ -275,5 +294,8 @@ class EmbeddingFactory:
         Requires OPENAI_API_KEY. Higher quality than local models
         but incurs API cost per embedding call.
         """
-        # TODO: implement using langchain_openai.OpenAIEmbeddings
-        raise NotImplementedError
+        from langchain_openai import OpenAIEmbeddings
+        
+        return OpenAIEmbeddings(
+            model=self._settings.embedding_model
+        )

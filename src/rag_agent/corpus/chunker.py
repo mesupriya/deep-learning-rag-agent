@@ -192,7 +192,7 @@ class DocumentChunker:
             to DocumentChunk objects.
         """
         from langchain_community.document_loaders import PyPDFLoader
-        from langchain.text_splitter import RecursiveCharacterTextSplitter
+        from langchain_text_splitters import RecursiveCharacterTextSplitter
         
         loader = PyPDFLoader(str(file_path))
         docs = loader.load()
@@ -239,7 +239,7 @@ class DocumentChunker:
         list[dict]
             Raw dicts with 'text' and 'header' keys.
         """
-        from langchain.text_splitter import MarkdownHeaderTextSplitter, RecursiveCharacterTextSplitter
+        from langchain_text_splitters import MarkdownHeaderTextSplitter, RecursiveCharacterTextSplitter
         
         content = file_path.read_text(encoding="utf-8")
         headers_to_split_on = [

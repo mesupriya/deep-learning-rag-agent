@@ -162,7 +162,7 @@ def generation_node(state: AgentState) -> dict:
     llm = LLMFactory(settings).create()
 
     # ---- Hallucination Guard -----------------------------------------------
-    if state.no_context_found:
+    if state.get("no_context_found"):
         no_context_message = (
             "I was unable to find relevant information in the corpus for your query. "
             "This may mean the topic is not yet covered in the study material, or "
@@ -174,7 +174,7 @@ def generation_node(state: AgentState) -> dict:
             sources=[],
             confidence=0.0,
             no_context_found=True,
-            rewritten_query=state.rewritten_query,
+            rewritten_query=state.get("rewritten_query", ""),
         )
         return {
             "final_response": response,

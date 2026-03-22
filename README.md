@@ -1,6 +1,8 @@
 # Deep Learning RAG Interview Prep Agent
 
-A RAG-powered interview preparation agent built with LangChain, LangGraph,
+**Author:** Supriya Veerla 
+
+Welcome to the **Deep Learning Agent**! This application is a fully functional conversational interface powered by LangChain, LangGraph, Streamlit, and ChromaDB that helps students study core Deep Learning topics like Artificial Neural Networks (ANN), Convolutional Neural Networks (CNN), and Recurrent Neural Networks (RNN) by answering questions directly from the uploaded material intelligently with a hallucination-guard routing system. with LangChain, LangGraph,
 and ChromaDB. Ingest deep learning study material and chat with it to
 generate and answer technical interview questions.
 

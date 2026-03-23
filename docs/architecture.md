@@ -1,6 +1,6 @@
 # System Architecture
 
-## Team: Supriya
+## Team: Supriya Veerla
 ## Date: March 22, 2026
 
 ## Members and Roles:

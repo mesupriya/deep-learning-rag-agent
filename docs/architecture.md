@@ -1,14 +1,15 @@
 # System Architecture
 
-## Team: Supriya Veerla
-## Date: March 22, 2026
+## Team: Byte me AI
+ 
+## Date: March 30, 2026
 
 ## Members and Roles:
-- Corpus Architect: Supriya Veerla
-- Pipeline Engineer: Supriya Veerla
-- UX Lead: Supriya Veerla
+- Corpus Architect: Ashwin Muralidharan
+- Pipeline Engineer: Deepak Kumar Varadaraj
+- UX Lead: Sri Varsha Rangaraj
 - Prompt Engineer: Supriya Veerla
-- QA Lead: Supriya Veerla
+- QA Lead: Vyshnavi Madamanchi
 
 ---
 
